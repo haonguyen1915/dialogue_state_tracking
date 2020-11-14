@@ -1,0 +1,930 @@
+[
+  {
+    "dialogue_idx": 600,
+    "dialogue": [
+      {
+        "turn_label": [
+          [
+            "area",
+            "south"
+          ],
+          [
+            "price range",
+            "expensive"
+          ]
+        ],
+        "asr": [
+          [
+            "I'm looking for an expensive restaurant in the south part of town.",
+            1.0
+          ]
+        ],
+        "system_transcript": "",
+        "turn_idx": 0,
+        "belief_state": [
+          {
+            "slots": [
+              [
+                "price range",
+                "expensive"
+              ]
+            ],
+            "act": "inform"
+          },
+          {
+            "slots": [
+              [
+                "area",
+                "south"
+              ]
+            ],
+            "act": "inform"
+          }
+        ],
+        "transcript": "I'm looking for an expensive restaurant in the south part of town.",
+        "system_acts": []
+      },
+      {
+        "turn_label": [
+          [
+            "request",
+            "phone"
+          ],
+          [
+            "request",
+            "address"
+          ]
+        ],
+        "asr": [
+          [
+            "Okay, what is the next one after that.  And can I get the address and phone number both, please?",
+            1.0
+          ]
+        ],
+        "system_transcript": "There is a restaurant called chiquito restaurant bar.",
+        "turn_idx": 1,
+        "belief_state": [
+          {
+            "slots": [
+              [
+                "slot",
+                "phone"
+              ]
+            ],
+            "act": "request"
+          },
+          {
+            "slots": [
+              [
+                "slot",
+                "address"
+              ]
+            ],
+            "act": "request"
+          },
+          {
+            "slots": [
+              [
+                "price range",
+                "expensive"
+              ]
+            ],
+            "act": "inform"
+          },
+          {
+            "slots": [
+              [
+                "area",
+                "south"
+              ]
+            ],
+            "act": "inform"
+          }
+        ],
+        "transcript": "Okay, what is the next one after that.  And can I get the address and phone number both, please?",
+        "system_acts": []
+      },
+      {
+        "turn_label": [],
+        "asr": [
+          [
+            "Thank you. You have been most helpful.",
+            1.0
+          ]
+        ],
+        "system_transcript": "Chicquito's is located at 2G Cambridge Leisure Park Cherry Hinton Road Cherry Hinton, Phone 01223 400170, and the restaurant below that is called frankie and bennys. It has a phone number of 01223 412430 and address of Cambridge Leisure Park Clifton Way Cherry Hinton",
+        "turn_idx": 2,
+        "belief_state": [
+          {
+            "slots": [
+              [
+                "price range",
+                "expensive"
+              ]
+            ],
+            "act": "inform"
+          },
+          {
+            "slots": [
+              [
+                "area",
+                "south"
+              ]
+            ],
+            "act": "inform"
+          }
+        ],
+        "transcript": "Thank you. You have been most helpful.",
+        "system_acts": []
+      }
+    ]
+  },
+  {
+    "dialogue_idx": 601,
+    "dialogue": [
+      {
+        "turn_label": [
+          [
+            "area",
+            "west"
+          ],
+          [
+            "price range",
+            "cheap"
+          ]
+        ],
+        "asr": [
+          [
+            "I'm looking for a cheap restaurant in the west.",
+            1.0
+          ]
+        ],
+        "system_transcript": "",
+        "turn_idx": 0,
+        "belief_state": [
+          {
+            "slots": [
+              [
+                "price range",
+                "cheap"
+              ]
+            ],
+            "act": "inform"
+          },
+          {
+            "slots": [
+              [
+                "area",
+                "west"
+              ]
+            ],
+            "act": "inform"
+          }
+        ],
+        "transcript": "I'm looking for a cheap restaurant in the west.",
+        "system_acts": []
+      },
+      {
+        "turn_label": [],
+        "asr": [
+          [
+            "Pardon?  Is that the name of a restaurant?",
+            1.0
+          ]
+        ],
+        "system_transcript": "name is tnahh binh",
+        "turn_idx": 1,
+        "belief_state": [
+          {
+            "slots": [
+              [
+                "price range",
+                "cheap"
+              ]
+            ],
+            "act": "inform"
+          },
+          {
+            "slots": [
+              [
+                "area",
+                "west"
+              ]
+            ],
+            "act": "inform"
+          }
+        ],
+        "transcript": "Pardon?  Is that the name of a restaurant?",
+        "system_acts": []
+      },
+      {
+        "turn_label": [
+          [
+            "request",
+            "phone"
+          ],
+          [
+            "request",
+            "address"
+          ]
+        ],
+        "asr": [
+          [
+            "What is the address and phone number?",
+            1.0
+          ]
+        ],
+        "system_transcript": "Yes, there is a Vietnamese restaurant in the west called Thanh Binh.",
+        "turn_idx": 2,
+        "belief_state": [
+          {
+            "slots": [
+              [
+                "slot",
+                "phone"
+              ]
+            ],
+            "act": "request"
+          },
+          {
+            "slots": [
+              [
+                "slot",
+                "address"
+              ]
+            ],
+            "act": "request"
+          },
+          {
+            "slots": [
+              [
+                "price range",
+                "cheap"
+              ]
+            ],
+            "act": "inform"
+          },
+          {
+            "slots": [
+              [
+                "area",
+                "west"
+              ]
+            ],
+            "act": "inform"
+          }
+        ],
+        "transcript": "What is the address and phone number?",
+        "system_acts": []
+      },
+      {
+        "turn_label": [],
+        "asr": [
+          [
+            "Thank you goodbye. ",
+            1.0
+          ]
+        ],
+        "system_transcript": "The address for the vietnamese restaurant Thanh Binh is 17 Magdalene Street City Centre and their phone number is 01223 362456.",
+        "turn_idx": 3,
+        "belief_state": [
+          {
+            "slots": [
+              [
+                "price range",
+                "cheap"
+              ]
+            ],
+            "act": "inform"
+          },
+          {
+            "slots": [
+              [
+                "area",
+                "west"
+              ]
+            ],
+            "act": "inform"
+          }
+        ],
+        "transcript": "Thank you goodbye. ",
+        "system_acts": []
+      }
+    ]
+  },
+  {
+    "dialogue_idx": 602,
+    "dialogue": [
+      {
+        "turn_label": [
+          [
+            "area",
+            "centre"
+          ],
+          [
+            "food",
+            "spanish"
+          ],
+          [
+            "request",
+            "phone"
+          ],
+          [
+            "request",
+            "address"
+          ]
+        ],
+        "asr": [
+          [
+            "Looking for the address and phone of a spanish in the centre of town.",
+            1.0
+          ]
+        ],
+        "system_transcript": "",
+        "turn_idx": 0,
+        "belief_state": [
+          {
+            "slots": [
+              [
+                "slot",
+                "phone"
+              ]
+            ],
+            "act": "request"
+          },
+          {
+            "slots": [
+              [
+                "slot",
+                "address"
+              ]
+            ],
+            "act": "request"
+          },
+          {
+            "slots": [
+              [
+                "food",
+                "spanish"
+              ]
+            ],
+            "act": "inform"
+          },
+          {
+            "slots": [
+              [
+                "area",
+                "centre"
+              ]
+            ],
+            "act": "inform"
+          }
+        ],
+        "transcript": "Looking for the address and phone of a spanish in the centre of town.",
+        "system_acts": []
+      },
+      {
+        "turn_label": [],
+        "asr": [
+          [
+            "Is there anything else other than those two?",
+            1.0
+          ]
+        ],
+        "system_transcript": "I have an inexpensive la Razam 01223 464550 at 4 - 6 Rose Crescent, and moderately priced la Tasca 01223 464630 at 14 -16 Bridge Street.",
+        "turn_idx": 1,
+        "belief_state": [
+          {
+            "slots": [
+              [
+                "food",
+                "spanish"
+              ]
+            ],
+            "act": "inform"
+          },
+          {
+            "slots": [
+              [
+                "area",
+                "centre"
+              ]
+            ],
+            "act": "inform"
+          }
+        ],
+        "transcript": "Is there anything else other than those two?",
+        "system_acts": []
+      },
+      {
+        "turn_label": [
+          [
+            "area",
+            "south"
+          ]
+        ],
+        "asr": [
+          [
+            "What is in the south?",
+            1.0
+          ]
+        ],
+        "system_transcript": "Not in the centre.  Would you be willing to travel to another area?",
+        "turn_idx": 2,
+        "belief_state": [
+          {
+            "slots": [
+              [
+                "food",
+                "spanish"
+              ]
+            ],
+            "act": "inform"
+          },
+          {
+            "slots": [
+              [
+                "area",
+                "south"
+              ]
+            ],
+            "act": "inform"
+          }
+        ],
+        "transcript": "What is in the south?",
+        "system_acts": [
+          "area"
+        ]
+      },
+      {
+        "turn_label": [],
+        "asr": [
+          [
+            "No, thank you, goodbye",
+            1.0
+          ]
+        ],
+        "system_transcript": "Unfortunately, there are no Spanish restaurants in the south. Would you like me to check if there are any in the North or West parts of town? ",
+        "turn_idx": 3,
+        "belief_state": [
+          {
+            "slots": [
+              [
+                "food",
+                "spanish"
+              ]
+            ],
+            "act": "inform"
+          },
+          {
+            "slots": [
+              [
+                "area",
+                "south"
+              ]
+            ],
+            "act": "inform"
+          }
+        ],
+        "transcript": "No, thank you, goodbye",
+        "system_acts": [
+          "area"
+        ]
+      },
+      {
+        "turn_label": [],
+        "asr": [
+          [
+            "Goodbye.",
+            1.0
+          ]
+        ],
+        "system_transcript": "Thank you! Goodbye!",
+        "turn_idx": 4,
+        "belief_state": [
+          {
+            "slots": [
+              [
+                "food",
+                "spanish"
+              ]
+            ],
+            "act": "inform"
+          },
+          {
+            "slots": [
+              [
+                "area",
+                "south"
+              ]
+            ],
+            "act": "inform"
+          }
+        ],
+        "transcript": "Goodbye.",
+        "system_acts": []
+      }
+    ]
+  },
+  {
+    "dialogue_idx": 603,
+    "dialogue": [
+      {
+        "turn_label": [
+          [
+            "food",
+            "korean"
+          ]
+        ],
+        "asr": [
+          [
+            "I'd like a restaurant with Korean food please. ",
+            1.0
+          ]
+        ],
+        "system_transcript": "",
+        "turn_idx": 0,
+        "belief_state": [
+          {
+            "slots": [
+              [
+                "food",
+                "korean"
+              ]
+            ],
+            "act": "inform"
+          }
+        ],
+        "transcript": "I'd like a restaurant with Korean food please. ",
+        "system_acts": []
+      },
+      {
+        "turn_label": [
+          [
+            "request",
+            "phone"
+          ],
+          [
+            "request",
+            "address"
+          ]
+        ],
+        "asr": [
+          [
+            "What is their address and phone number?",
+            1.0
+          ]
+        ],
+        "system_transcript": "Little Seoul is a Korean restaurant in the city centre, serving expensive food.",
+        "turn_idx": 1,
+        "belief_state": [
+          {
+            "slots": [
+              [
+                "slot",
+                "phone"
+              ]
+            ],
+            "act": "request"
+          },
+          {
+            "slots": [
+              [
+                "slot",
+                "address"
+              ]
+            ],
+            "act": "request"
+          },
+          {
+            "slots": [
+              [
+                "food",
+                "korean"
+              ]
+            ],
+            "act": "inform"
+          }
+        ],
+        "transcript": "What is their address and phone number?",
+        "system_acts": []
+      },
+      {
+        "turn_label": [],
+        "asr": [
+          [
+            "Thank you, goodbye",
+            1.0
+          ]
+        ],
+        "system_transcript": "Little Seoul is located at 108 Regent Street City Centre and their telephone number is 01223 308681.",
+        "turn_idx": 2,
+        "belief_state": [
+          {
+            "slots": [
+              [
+                "food",
+                "korean"
+              ]
+            ],
+            "act": "inform"
+          }
+        ],
+        "transcript": "Thank you, goodbye",
+        "system_acts": []
+      }
+    ]
+  },
+  {
+    "dialogue_idx": 604,
+    "dialogue": [
+      {
+        "turn_label": [
+          [
+            "food",
+            "turkish"
+          ]
+        ],
+        "asr": [
+          [
+            "Hi there, I'm looking for a Turkish place",
+            1.0
+          ]
+        ],
+        "system_transcript": "",
+        "turn_idx": 0,
+        "belief_state": [
+          {
+            "slots": [
+              [
+                "food",
+                "turkish"
+              ]
+            ],
+            "act": "inform"
+          }
+        ],
+        "transcript": "Hi there, I'm looking for a Turkish place",
+        "system_acts": []
+      },
+      {
+        "turn_label": [
+          [
+            "request",
+            "address"
+          ]
+        ],
+        "asr": [
+          [
+            "Is there anything else? If so, what is their address?",
+            1.0
+          ]
+        ],
+        "system_transcript": "How about Meze bar restaurant?",
+        "turn_idx": 1,
+        "belief_state": [
+          {
+            "slots": [
+              [
+                "slot",
+                "address"
+              ]
+            ],
+            "act": "request"
+          },
+          {
+            "slots": [
+              [
+                "food",
+                "turkish"
+              ]
+            ],
+            "act": "inform"
+          }
+        ],
+        "transcript": "Is there anything else? If so, what is their address?",
+        "system_acts": []
+      },
+      {
+        "turn_label": [],
+        "asr": [
+          [
+            "That's all the information that I needed. Thanks! ",
+            1.0
+          ]
+        ],
+        "system_transcript": "Anatolia, the address is 30 Bridge Street City Centre. Can I help you with anything else?",
+        "turn_idx": 2,
+        "belief_state": [
+          {
+            "slots": [
+              [
+                "food",
+                "turkish"
+              ]
+            ],
+            "act": "inform"
+          }
+        ],
+        "transcript": "That's all the information that I needed. Thanks! ",
+        "system_acts": []
+      }
+    ]
+  },
+  {
+    "dialogue_idx": 605,
+    "dialogue": [
+      {
+        "turn_label": [
+          [
+            "food",
+            "singaporean"
+          ]
+        ],
+        "asr": [
+          [
+            "hello, i'm looking for a singaporean restaurant",
+            1.0
+          ]
+        ],
+        "system_transcript": "",
+        "turn_idx": 0,
+        "belief_state": [
+          {
+            "slots": [
+              [
+                "food",
+                "singaporean"
+              ]
+            ],
+            "act": "inform"
+          }
+        ],
+        "transcript": "hello, i'm looking for a singaporean restaurant",
+        "system_acts": []
+      },
+      {
+        "turn_label": [
+          [
+            "food",
+            "asian oriental"
+          ]
+        ],
+        "asr": [
+          [
+            "Yeah man, how bout some asian oriental? ",
+            1.0
+          ]
+        ],
+        "system_transcript": "Unfortunately, I'm not seeing any results for Singaporean food. Can I help you find something similar? ",
+        "turn_idx": 1,
+        "belief_state": [
+          {
+            "slots": [
+              [
+                "food",
+                "asian oriental"
+              ]
+            ],
+            "act": "inform"
+          }
+        ],
+        "transcript": "Yeah man, how bout some asian oriental? ",
+        "system_acts": []
+      },
+      {
+        "turn_label": [
+          [
+            "price range",
+            "dontcare"
+          ]
+        ],
+        "asr": [
+          [
+            "No.",
+            1.0
+          ]
+        ],
+        "system_transcript": "Any specific price range?",
+        "turn_idx": 2,
+        "belief_state": [
+          {
+            "slots": [
+              [
+                "food",
+                "asian oriental"
+              ]
+            ],
+            "act": "inform"
+          },
+          {
+            "slots": [
+              [
+                "price range",
+                "dontcare"
+              ]
+            ],
+            "act": "inform"
+          }
+        ],
+        "transcript": "No.",
+        "system_acts": [
+          "price range"
+        ]
+      },
+      {
+        "turn_label": [
+          [
+            "request",
+            "phone"
+          ],
+          [
+            "request",
+            "address"
+          ]
+        ],
+        "asr": [
+          [
+            "Address and phone number?",
+            1.0
+          ]
+        ],
+        "system_transcript": "Dojo noodle bar is a good choice.",
+        "turn_idx": 3,
+        "belief_state": [
+          {
+            "slots": [
+              [
+                "slot",
+                "phone"
+              ]
+            ],
+            "act": "request"
+          },
+          {
+            "slots": [
+              [
+                "slot",
+                "address"
+              ]
+            ],
+            "act": "request"
+          },
+          {
+            "slots": [
+              [
+                "price range",
+                "dontcare"
+              ]
+            ],
+            "act": "inform"
+          },
+          {
+            "slots": [
+              [
+                "food",
+                "asian oriental"
+              ]
+            ],
+            "act": "inform"
+          }
+        ],
+        "transcript": "Address and phone number?",
+        "system_acts": []
+      },
+      {
+        "turn_label": [],
+        "asr": [
+          [
+            "Thank you - have a nice day.",
+            1.0
+          ]
+        ],
+        "system_transcript": "The phone number to Dojo Noodle Bar is 01223 363471. The address is 40210 Millers Yard, City Centre.",
+        "turn_idx": 4,
+        "belief_state": [
+          {
+            "slots": [
+              [
+                "price range",
+                "dontcare"
+              ]
+            ],
+            "act": "inform"
+          },
+          {
+            "slots": [
+              [
+                "food",
+                "asian oriental"
+              ]
+            ],
+            "act": "inform"
+          }
+        ],
+        "transcript": "Thank you - have a nice day.",
+        "system_acts": []
+      }
+    ]
+  }
+]

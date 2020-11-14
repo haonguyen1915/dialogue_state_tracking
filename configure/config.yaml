@@ -1,0 +1,34 @@
+GENERAL:
+  gpu: null
+  test: False
+  model_path: models
+
+DATA:
+  # The dataset may be raw or ann
+  #    raw:
+  #      train_path: assets/raw/train.json
+  #      dev_path: assets/raw/dev.json
+  #      test_path: assets/raw/test.json
+  ann:
+    train_path: assets/raw/train_ann.json
+    dev_path: assets/raw/dev_ann.json
+    test_path: assets/raw/test_ann.json
+ALGORITHM:
+  model_arch: glad
+  hyperparameter:
+    model: glad
+    dexp: exp
+    epoch: 150
+    demb: 400
+    dhid: 200
+    batch_size: 50
+    lr: 0.001
+    stop: joint_goal
+    resume: False
+    nick: default
+    seed: 777
+    gpu: 0
+    dropout:
+      emb: 0.2
+      local: 0.2
+      global: 0.2
