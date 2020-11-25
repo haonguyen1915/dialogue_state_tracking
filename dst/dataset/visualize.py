@@ -1,6 +1,5 @@
 from texttable import Texttable
 import torch
-from magic.lib_cm import *
 
 
 def viz_turns(turns, show=True):
@@ -19,7 +18,8 @@ def viz_turns(turns, show=True):
     return t.draw()
 
 
-def get_turn_pred_gold(gold_request, gold_inform, gold_recovered, pred_request, pred_inform, pred_recovered):
+def get_turn_pred_gold(gold_request, gold_inform, gold_recovered, pred_request, pred_inform,
+                       pred_recovered):
     # print("gold_request: {}".format(gold_request))
     # print("gold_inform: {}".format(gold_inform))
     # print("gold_recovered: {}".format(gold_recovered))
@@ -40,7 +40,8 @@ def viz_embddings(batch, emb):
     seqs = [e.num['transcript'] for e in batch]
     utterance_len = [len(s) for s in seqs]
     max_len = max(utterance_len)
-    utterance_padded = torch.LongTensor([s + (max_len - l) * [1] for s, l in zip(seqs, utterance_len)])
+    utterance_padded = torch.LongTensor(
+        [s + (max_len - l) * [1] for s, l in zip(seqs, utterance_len)])
     utterance = emb(utterance_padded.to('cpu'))
 
     # system_acts_len = [len(s) for s in seqs_system_acts]
@@ -108,7 +109,7 @@ if __name__ == "__main__":
                  {('request', 'address'), ('request', 'phone')},
                  set()]
 
-    for preds in [preds_all[0: 5], preds_all[5: ]]:
+    for preds in [preds_all[0: 5], preds_all[5:]]:
         # preds = preds[t:]
         pred_state = {}
         for i in range(len(preds)):

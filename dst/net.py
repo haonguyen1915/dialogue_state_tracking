@@ -6,14 +6,12 @@ import numpy as np
 import logging
 import os
 import re
-import json
 from collections import defaultdict
 from pprint import pformat
 import json
 from texttable import Texttable
-from magic.lib_cm import *
-
-_logger = get_logger(__name__)
+import logging
+_logger = logging.getLogger(__name__)
 
 
 def pad(seqs, emb, device, pad=0):

@@ -42,11 +42,7 @@ class DialogueStateTrackingLearner(object):
             vocab=self.vocab)
         self.glad_model.save_config()
         self.glad_model.load_emb(self.embeddings)
-        # from magic.lib_cm import write_json_beutifier
-        # a = self.vocab.to_dict()['index2word']
-        # b = {idx: word for idx, word in enumerate(a)}
-        # write_json_beutifier('models/idx_to_word.json', b)
-        # exit()
+
     def train(self):
         """
 
@@ -120,6 +116,8 @@ class DialogueStateTrackingLearner(object):
         Returns:
 
         """
+        if not os.path.isdir(models_path):
+            os.makedirs(models_path)
         splits_path = {}
 
         if train_path:

@@ -5,14 +5,14 @@ GENERAL:
 
 DATA:
 #  The dataset may be raw or ann
-#  raw:
-#    train_path: assets/raw/train.json
-#    dev_path: assets/raw/dev.json
-#    test_path: assets/raw/test.json
-  ann:
-    train_path: assets/raw/train_ann.json
-    dev_path: assets/raw/dev_ann.json
-    test_path: assets/raw/test_ann.json
+  raw:
+    train_path: assets/raw/train.json
+    dev_path: assets/raw/dev.json
+    test_path: assets/raw/test.json
+#  ann:
+#    train_path: assets/raw/train_ann.json
+#    dev_path: assets/raw/dev_ann.json
+#    test_path: assets/raw/test_ann.json
 ALGORITHM:
   model_arch: glad
   hyperparameter:
