@@ -4,11 +4,11 @@ GENERAL:
   model_path: models
 
 DATA:
-  # The dataset may be raw or ann
-  #    raw:
-  #      train_path: assets/raw/train.json
-  #      dev_path: assets/raw/dev.json
-  #      test_path: assets/raw/test.json
+#  The dataset may be raw or ann
+#  raw:
+#    train_path: assets/raw/train.json
+#    dev_path: assets/raw/dev.json
+#    test_path: assets/raw/test.json
   ann:
     train_path: assets/raw/train_ann.json
     dev_path: assets/raw/dev_ann.json
@@ -21,7 +21,7 @@ ALGORITHM:
     epoch: 150
     demb: 400
     dhid: 200
-    batch_size: 50
+    batch_size: 2
     lr: 0.001
     stop: joint_goal
     resume: False

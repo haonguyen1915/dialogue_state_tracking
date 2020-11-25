@@ -10,15 +10,16 @@ from dst.net import GladModel
 import logging
 from pprint import pprint
 
+
 class DialogueStateTrackingLearner(object):
-    def __init__(self, configure):
+    def __init__(self, configure, **kwargs):
         self.configure = configure
         self.model_path = self.configure['GENERAL']['model_path']
 
         args = self.configure['ALGORITHM']['hyperparameter']
         args['dout'] = os.path.join(args['dexp'], args['model'], args['nick'])
         self.train_args = args
-        self.training = True
+        self.training = True if kwargs.get('mode', 'infer') == 'train' else False
         self.ontology: Ontology = Ontology()
         self.vocab: Vocab = Vocab()
         self.dataset: Dict = {}
@@ -26,10 +27,9 @@ class DialogueStateTrackingLearner(object):
 
         if not self.training:
             self.load(self.model_path)
-
         else:
             if 'raw' in self.configure['DATA']:
-                data_paths = self.configure['TRAINER']['raw']
+                data_paths = self.configure['DATA']['raw']
                 self.process_raw_dataset(models_path=self.configure['GENERAL']['model_path'],
                                          **data_paths)
             else:
@@ -42,7 +42,11 @@ class DialogueStateTrackingLearner(object):
             vocab=self.vocab)
         self.glad_model.save_config()
         self.glad_model.load_emb(self.embeddings)
-
+        # from magic.lib_cm import write_json_beutifier
+        # a = self.vocab.to_dict()['index2word']
+        # b = {idx: word for idx, word in enumerate(a)}
+        # write_json_beutifier('models/idx_to_word.json', b)
+        # exit()
     def train(self):
         """
 
@@ -58,13 +62,22 @@ class DialogueStateTrackingLearner(object):
             self.dataset['train'],
             self.dataset['dev'],
             self.train_args
-            )
+        )
 
         self.glad_model = self.glad_model.to(self.glad_model.device)
         logging.info('Running dev evaluation')
-        dev_out = self.glad_model.run_eval(self.dataset['dev'], self.train_args)
+        dev_out = self.glad_model.run_eval(self.dataset['test'], self.train_args)
         pprint(dev_out)
-        exit()
+
+    def test(self, test_data: Text):
+        """
+
+        Args:
+            test_data:
+
+        Returns:
+
+        """
 
     def load(self, models_path):
         """
@@ -86,6 +99,8 @@ class DialogueStateTrackingLearner(object):
         if os.path.isfile(os.path.join(models_path, 'emb.json')):
             with open(os.path.join(models_path, 'emb.json')) as f:
                 self.embeddings = json.load(f)
+
+        # self.glad_model.load()
 
     def process_raw_dataset(
             self,
@@ -130,13 +145,14 @@ class DialogueStateTrackingLearner(object):
             json.dump(self.vocab.to_dict(), f, indent=4)
 
         # Generate embedding file
-        self.embeddings = [GloveEmbedding(), KazumaCharEmbedding()]
+        embeddings = [GloveEmbedding(), KazumaCharEmbedding()]
         E = []
         for w in tqdm(self.vocab._index2word):
             e = []
-            for emb in self.embeddings:
+            for emb in embeddings:
                 e += emb.emb(w, default='zero')
             E.append(e)
+        self.embeddings = E
         with open(os.path.join(models_path, 'emb.json'), 'wt') as f:
             json.dump(E, f)
 

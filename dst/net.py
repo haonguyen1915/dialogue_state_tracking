@@ -175,31 +175,22 @@ class GladModel(nn.Module):
     def forward(self, batch):
         tee = Texttable(max_width=150)
         tee.add_rows([["Attribute", "content"]])
-        # batch = batch[7:15]
-
+        # batch = batch[0:2]
         # convert to variables and look up embeddings
         eos = self.vocab.word2index('<eos>')
         utterance, utterance_len = pad([e.num['transcript'] for e in batch], self.emb_fixed,
                                        self.device, pad=eos)
         acts = [pad(e.num['system_acts'], self.emb_fixed, self.device, pad=eos) for e in batch]
-        ontology = {s: pad(v, self.emb_fixed, self.device, pad=eos) for s, v in
-                    self.ontology.num.items()}
+        ontology = {}
+        for s, v in self.ontology.num.items():
+            ontology[s] = pad(v, self.emb_fixed, self.device, pad=eos)
 
         ys = {}
-
-        # viz_embddings(batch, self.emb_fixed)
-        # print(self.ontology.slots)
-        # exit()
         for s in self.ontology.slots:
             # for each slot, compute the scores for each value
             H_utt, c_utt = self.utt_encoder(utterance, utterance_len, slot=s)
             _, C_acts = list(zip(*[self.act_encoder(a, a_len, slot=s) for a, a_len in acts]))
             _, C_vals = self.ont_encoder(ontology[s][0], ontology[s][1], slot=s)
-            # print(utterance)
-            # print(utterance_len)
-            # print(s)
-            # exit()
-
             # compute the utterance score
             y_utts = []
             q_utts = []
@@ -218,16 +209,6 @@ class GladModel(nn.Module):
 
             # combine the scores
             ys[s] = F.sigmoid(y_utts + self.score_weight * y_acts)
-            # _logger.info(f"Slot: {s}")
-            # _logger.info(f"ys[{s} shape: {ys[s].shape}")
-            # _logger.info(f"ys[{s}: {ys[s]}")
-        # exit()
-        # labels = {s: [len(self.ontology.values[s]) * [0] for i in range(len(batch))] for s in self.ontology.slots}
-        # show_dict(labels)
-        # viz_inputs_labels(self.ontology, batch)
-        # self.train()
-        # show_dict([e.belief_state for e in batch])
-        # show_dict([e.system_acts for e in batch])
         if self.training:
             # create label variable and compute loss
             labels = {s: [len(self.ontology.values[s]) * [0] for i in range(len(batch))] for s in
@@ -236,16 +217,12 @@ class GladModel(nn.Module):
                 for s, v in e.turn_label:
                     labels[s][i][self.ontology.values[s].index(v)] = 1
             labels = {s: torch.Tensor(m).to(self.device) for s, m in labels.items()}
-
             loss = 0
             # print(labels)
             for s in self.ontology.slots:
                 loss += F.binary_cross_entropy(ys[s], labels[s])
         else:
             loss = torch.Tensor([0]).to(self.device)
-        # print(ys.keys())
-        # print(ys["area"].size())
-        # exit()
         return loss, {s: v.data.tolist() for s, v in ys.items()}
 
     def get_train_logger(self):
@@ -271,8 +248,6 @@ class GladModel(nn.Module):
             # train and update parameters
             self.train()
             for batch in train.batch(batch_size=args['batch_size'], shuffle=True):
-                # print(batch)
-                # exit()
                 iteration += 1
                 self.zero_grad()
                 loss, scores = self.forward(batch)

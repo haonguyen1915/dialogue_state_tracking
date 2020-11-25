@@ -1,21 +1,17 @@
 [
   {
-    "dialogue_idx": 600,
+    "dialogue_idx": 817,
     "dialogue": [
       {
         "turn_label": [
           [
-            "area",
-            "south"
-          ],
-          [
             "price range",
-            "expensive"
+            "cheap"
           ]
         ],
         "asr": [
           [
-            "I'm looking for an expensive restaurant in the south part of town.",
+            "hello, i'm looking for a cheap place to eat",
             1.0
           ]
         ],
@@ -26,7 +22,36 @@
             "slots": [
               [
                 "price range",
-                "expensive"
+                "cheap"
+              ]
+            ],
+            "act": "inform"
+          }
+        ],
+        "transcript": "hello, i'm looking for a cheap place to eat",
+        "system_acts": []
+      },
+      {
+        "turn_label": [
+          [
+            "food",
+            "eritrean"
+          ]
+        ],
+        "asr": [
+          [
+            "I prefer Eritrean food, although if that's not available, please give me Italian options.",
+            1.0
+          ]
+        ],
+        "system_transcript": "We have many excellent inexpensive choices. Do you have a type of food in mind or an area that would be convenient for you?",
+        "turn_idx": 1,
+        "belief_state": [
+          {
+            "slots": [
+              [
+                "food",
+                "eritrean"
               ]
             ],
             "act": "inform"
@@ -34,18 +59,25 @@
           {
             "slots": [
               [
-                "area",
-                "south"
+                "price range",
+                "cheap"
               ]
             ],
             "act": "inform"
           }
         ],
-        "transcript": "I'm looking for an expensive restaurant in the south part of town.",
-        "system_acts": []
+        "transcript": "I prefer Eritrean food, although if that's not available, please give me Italian options.",
+        "system_acts": [
+          "food",
+          "area"
+        ]
       },
       {
         "turn_label": [
+          [
+            "food",
+            "italian"
+          ],
           [
             "request",
             "phone"
@@ -57,12 +89,12 @@
         ],
         "asr": [
           [
-            "Okay, what is the next one after that.  And can I get the address and phone number both, please?",
+            "Ok great can you give me the address and phone number for zizzi's?",
             1.0
           ]
         ],
-        "system_transcript": "There is a restaurant called chiquito restaurant bar.",
-        "turn_idx": 1,
+        "system_transcript": "zizzi cambridge is an italian cheap restaurant.",
+        "turn_idx": 2,
         "belief_state": [
           {
             "slots": [
@@ -85,8 +117,119 @@
           {
             "slots": [
               [
+                "food",
+                "italian"
+              ]
+            ],
+            "act": "inform"
+          },
+          {
+            "slots": [
+              [
                 "price range",
-                "expensive"
+                "cheap"
+              ]
+            ],
+            "act": "inform"
+          }
+        ],
+        "transcript": "Ok great can you give me the address and phone number for zizzi's?",
+        "system_acts": [
+          [
+            "food",
+            "italian"
+          ]
+        ]
+      },
+      {
+        "turn_label": [],
+        "asr": [
+          [
+            "Thanks. That's all I needed.",
+            1.0
+          ]
+        ],
+        "system_transcript": "zizzi cambridge can be reached at 01223 365599 and is located at 47-53 Regent Street.",
+        "turn_idx": 3,
+        "belief_state": [
+          {
+            "slots": [
+              [
+                "food",
+                "italian"
+              ]
+            ],
+            "act": "inform"
+          },
+          {
+            "slots": [
+              [
+                "price range",
+                "cheap"
+              ]
+            ],
+            "act": "inform"
+          }
+        ],
+        "transcript": "Thanks. That's all I needed.",
+        "system_acts": []
+      }
+    ]
+  },
+  {
+    "dialogue_idx": 828,
+    "dialogue": [
+      {
+        "turn_label": [
+          [
+            "area",
+            "dontcare"
+          ],
+          [
+            "food",
+            "vegetarian"
+          ],
+          [
+            "request",
+            "postcode"
+          ],
+          [
+            "request",
+            "phone"
+          ]
+        ],
+        "asr": [
+          [
+            "I am looking for vegetarian food in any area but if you can't find any international food is fine also.  Please give me their phone number and postcode.",
+            1.0
+          ]
+        ],
+        "system_transcript": "",
+        "turn_idx": 0,
+        "belief_state": [
+          {
+            "slots": [
+              [
+                "slot",
+                "postcode"
+              ]
+            ],
+            "act": "request"
+          },
+          {
+            "slots": [
+              [
+                "slot",
+                "phone"
+              ]
+            ],
+            "act": "request"
+          },
+          {
+            "slots": [
+              [
+                "food",
+                "vegetarian"
               ]
             ],
             "act": "inform"
@@ -95,31 +238,319 @@
             "slots": [
               [
                 "area",
-                "south"
+                "dontcare"
               ]
             ],
             "act": "inform"
           }
         ],
-        "transcript": "Okay, what is the next one after that.  And can I get the address and phone number both, please?",
+        "transcript": "I am looking for vegetarian food in any area but if you can't find any international food is fine also.  Please give me their phone number and postcode.",
+        "system_acts": []
+      },
+      {
+        "turn_label": [
+          [
+            "food",
+            "international"
+          ]
+        ],
+        "asr": [
+          [
+            "thank you very much.",
+            1.0
+          ]
+        ],
+        "system_transcript": "I would recommend Bloomsbury Restaurant.  They serve International.  Phone is 0871 942 9180.  Postcode C.B 2, 3 D.T",
+        "turn_idx": 1,
+        "belief_state": [
+          {
+            "slots": [
+              [
+                "food",
+                "international"
+              ]
+            ],
+            "act": "inform"
+          },
+          {
+            "slots": [
+              [
+                "area",
+                "dontcare"
+              ]
+            ],
+            "act": "inform"
+          }
+        ],
+        "transcript": "thank you very much.",
+        "system_acts": [
+          [
+            "food",
+            "international"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "dialogue_idx": 841,
+    "dialogue": [
+      {
+        "turn_label": [
+          [
+            "area",
+            "north"
+          ],
+          [
+            "food",
+            "moroccan"
+          ],
+          [
+            "request",
+            "address"
+          ]
+        ],
+        "asr": [
+          [
+            "Where can I find a moroccan food restaurant in the north part of town? ",
+            1.0
+          ]
+        ],
+        "system_transcript": "",
+        "turn_idx": 0,
+        "belief_state": [
+          {
+            "slots": [
+              [
+                "slot",
+                "address"
+              ]
+            ],
+            "act": "request"
+          },
+          {
+            "slots": [
+              [
+                "food",
+                "moroccan"
+              ]
+            ],
+            "act": "inform"
+          },
+          {
+            "slots": [
+              [
+                "area",
+                "north"
+              ]
+            ],
+            "act": "inform"
+          }
+        ],
+        "transcript": "Where can I find a moroccan food restaurant in the north part of town? ",
+        "system_acts": []
+      },
+      {
+        "turn_label": [
+          [
+            "food",
+            "french"
+          ],
+          [
+            "area",
+            "north"
+          ]
+        ],
+        "asr": [
+          [
+            "OK, then are there are any French restaurants  in the north part of town?",
+            1.0
+          ]
+        ],
+        "system_transcript": "I'm sorry, there are no restaurants of that type available.  ",
+        "turn_idx": 1,
+        "belief_state": [
+          {
+            "slots": [
+              [
+                "food",
+                "french"
+              ]
+            ],
+            "act": "inform"
+          },
+          {
+            "slots": [
+              [
+                "area",
+                "north"
+              ]
+            ],
+            "act": "inform"
+          }
+        ],
+        "transcript": "OK, then are there are any French restaurants  in the north part of town?",
+        "system_acts": []
+      },
+      {
+        "turn_label": [
+          [
+            "request",
+            "phone"
+          ],
+          [
+            "request",
+            "address"
+          ]
+        ],
+        "asr": [
+          [
+            "Yes please.",
+            1.0
+          ]
+        ],
+        "system_transcript": "Yes, there is Restaurant Two Two. Do you need an address or phone number?",
+        "turn_idx": 2,
+        "belief_state": [
+          {
+            "slots": [
+              [
+                "slot",
+                "phone"
+              ]
+            ],
+            "act": "request"
+          },
+          {
+            "slots": [
+              [
+                "slot",
+                "address"
+              ]
+            ],
+            "act": "request"
+          },
+          {
+            "slots": [
+              [
+                "food",
+                "french"
+              ]
+            ],
+            "act": "inform"
+          },
+          {
+            "slots": [
+              [
+                "area",
+                "north"
+              ]
+            ],
+            "act": "inform"
+          }
+        ],
+        "transcript": "Yes please.",
+        "system_acts": [
+          "address",
+          "phone"
+        ]
+      },
+      {
+        "turn_label": [],
+        "asr": [
+          [
+            "thank you, goodbye ",
+            1.0
+          ]
+        ],
+        "system_transcript": "22 Chesterton Road Chesterton and number is 01223 351880",
+        "turn_idx": 3,
+        "belief_state": [
+          {
+            "slots": [
+              [
+                "food",
+                "french"
+              ]
+            ],
+            "act": "inform"
+          },
+          {
+            "slots": [
+              [
+                "area",
+                "north"
+              ]
+            ],
+            "act": "inform"
+          }
+        ],
+        "transcript": "thank you, goodbye ",
+        "system_acts": []
+      }
+    ]
+  },
+  {
+    "dialogue_idx": 845,
+    "dialogue": [
+      {
+        "turn_label": [
+          [
+            "area",
+            "north"
+          ],
+          [
+            "price range",
+            "moderate"
+          ]
+        ],
+        "asr": [
+          [
+            "I'm looking for a moderately priced restaurant in the north part of town.",
+            1.0
+          ]
+        ],
+        "system_transcript": "",
+        "turn_idx": 0,
+        "belief_state": [
+          {
+            "slots": [
+              [
+                "price range",
+                "moderate"
+              ]
+            ],
+            "act": "inform"
+          },
+          {
+            "slots": [
+              [
+                "area",
+                "north"
+              ]
+            ],
+            "act": "inform"
+          }
+        ],
+        "transcript": "I'm looking for a moderately priced restaurant in the north part of town.",
         "system_acts": []
       },
       {
         "turn_label": [],
         "asr": [
           [
-            "Thank you. You have been most helpful.",
+            "Anything else?",
             1.0
           ]
         ],
-        "system_transcript": "Chicquito's is located at 2G Cambridge Leisure Park Cherry Hinton Road Cherry Hinton, Phone 01223 400170, and the restaurant below that is called frankie and bennys. It has a phone number of 01223 412430 and address of Cambridge Leisure Park Clifton Way Cherry Hinton",
-        "turn_idx": 2,
+        "system_transcript": "I can do that for you. Which sounds better? Chinese or Indian?",
+        "turn_idx": 1,
         "belief_state": [
           {
             "slots": [
               [
                 "price range",
-                "expensive"
+                "moderate"
               ]
             ],
             "act": "inform"
@@ -128,19 +559,90 @@
             "slots": [
               [
                 "area",
-                "south"
+                "north"
               ]
             ],
             "act": "inform"
           }
         ],
-        "transcript": "Thank you. You have been most helpful.",
+        "transcript": "Anything else?",
+        "system_acts": [
+          "food"
+        ]
+      },
+      {
+        "turn_label": [],
+        "asr": [
+          [
+            "No, I want to know if there's anything else in the north part of town.",
+            1.0
+          ]
+        ],
+        "system_transcript": "The Golden Wok is a Chinese restaurant.  The Nirala is an Indian restaurant.  Do you want information about either of these restaurants?",
+        "turn_idx": 2,
+        "belief_state": [
+          {
+            "slots": [
+              [
+                "price range",
+                "moderate"
+              ]
+            ],
+            "act": "inform"
+          },
+          {
+            "slots": [
+              [
+                "area",
+                "north"
+              ]
+            ],
+            "act": "inform"
+          }
+        ],
+        "transcript": "No, I want to know if there's anything else in the north part of town.",
         "system_acts": []
+      },
+      {
+        "turn_label": [],
+        "asr": [
+          [
+            "No that's it, thank you.",
+            1.0
+          ]
+        ],
+        "system_transcript": "I apologize for the misunderstanding.  I am only showing only Chinese and Indian cuisine in the north part of town.  Will either of these do?  Or is there another area you would like me to search?",
+        "turn_idx": 3,
+        "belief_state": [
+          {
+            "slots": [
+              [
+                "price range",
+                "moderate"
+              ]
+            ],
+            "act": "inform"
+          },
+          {
+            "slots": [
+              [
+                "area",
+                "north"
+              ]
+            ],
+            "act": "inform"
+          }
+        ],
+        "transcript": "No that's it, thank you.",
+        "system_acts": [
+          "food",
+          "area"
+        ]
       }
     ]
   },
   {
-    "dialogue_idx": 601,
+    "dialogue_idx": 860,
     "dialogue": [
       {
         "turn_label": [
@@ -149,76 +651,9 @@
             "west"
           ],
           [
-            "price range",
-            "cheap"
-          ]
-        ],
-        "asr": [
-          [
-            "I'm looking for a cheap restaurant in the west.",
-            1.0
-          ]
-        ],
-        "system_transcript": "",
-        "turn_idx": 0,
-        "belief_state": [
-          {
-            "slots": [
-              [
-                "price range",
-                "cheap"
-              ]
-            ],
-            "act": "inform"
-          },
-          {
-            "slots": [
-              [
-                "area",
-                "west"
-              ]
-            ],
-            "act": "inform"
-          }
-        ],
-        "transcript": "I'm looking for a cheap restaurant in the west.",
-        "system_acts": []
-      },
-      {
-        "turn_label": [],
-        "asr": [
-          [
-            "Pardon?  Is that the name of a restaurant?",
-            1.0
-          ]
-        ],
-        "system_transcript": "name is tnahh binh",
-        "turn_idx": 1,
-        "belief_state": [
-          {
-            "slots": [
-              [
-                "price range",
-                "cheap"
-              ]
-            ],
-            "act": "inform"
-          },
-          {
-            "slots": [
-              [
-                "area",
-                "west"
-              ]
-            ],
-            "act": "inform"
-          }
-        ],
-        "transcript": "Pardon?  Is that the name of a restaurant?",
-        "system_acts": []
-      },
-      {
-        "turn_label": [
+            "food",
+            "canapes"
+          ],
           [
             "request",
             "phone"
@@ -230,12 +665,12 @@
         ],
         "asr": [
           [
-            "What is the address and phone number?",
+            "I am looking for the location and number to restaurants on the westside that serve canapes or indian food.",
             1.0
           ]
         ],
-        "system_transcript": "Yes, there is a Vietnamese restaurant in the west called Thanh Binh.",
-        "turn_idx": 2,
+        "system_transcript": "",
+        "turn_idx": 0,
         "belief_state": [
           {
             "slots": [
@@ -258,8 +693,8 @@
           {
             "slots": [
               [
-                "price range",
-                "cheap"
+                "food",
+                "canapes"
               ]
             ],
             "act": "inform"
@@ -274,25 +709,65 @@
             "act": "inform"
           }
         ],
-        "transcript": "What is the address and phone number?",
+        "transcript": "I am looking for the location and number to restaurants on the westside that serve canapes or indian food.",
         "system_acts": []
       },
       {
-        "turn_label": [],
+        "turn_label": [
+          [
+            "price range",
+            "moderate"
+          ],
+          [
+            "request",
+            "phone"
+          ],
+          [
+            "request",
+            "address"
+          ]
+        ],
         "asr": [
           [
-            "Thank you goodbye. ",
+            "Do you have the address or phone number for a moderately priced restaurant like this? ",
             1.0
           ]
         ],
-        "system_transcript": "The address for the vietnamese restaurant Thanh Binh is 17 Magdalene Street City Centre and their phone number is 01223 362456.",
-        "turn_idx": 3,
+        "system_transcript": "Is there a specific Price Range you'd like to stay within?",
+        "turn_idx": 1,
         "belief_state": [
           {
             "slots": [
               [
+                "slot",
+                "phone"
+              ]
+            ],
+            "act": "request"
+          },
+          {
+            "slots": [
+              [
+                "slot",
+                "address"
+              ]
+            ],
+            "act": "request"
+          },
+          {
+            "slots": [
+              [
+                "food",
+                "canapes"
+              ]
+            ],
+            "act": "inform"
+          },
+          {
+            "slots": [
+              [
                 "price range",
-                "cheap"
+                "moderate"
               ]
             ],
             "act": "inform"
@@ -307,23 +782,16 @@
             "act": "inform"
           }
         ],
-        "transcript": "Thank you goodbye. ",
-        "system_acts": []
-      }
-    ]
-  },
-  {
-    "dialogue_idx": 602,
-    "dialogue": [
+        "transcript": "Do you have the address or phone number for a moderately priced restaurant like this? ",
+        "system_acts": [
+          "price range"
+        ]
+      },
       {
         "turn_label": [
-          [
-            "area",
-            "centre"
-          ],
           [
             "food",
-            "spanish"
+            "indian"
           ],
           [
             "request",
@@ -332,16 +800,20 @@
           [
             "request",
             "address"
+          ],
+          [
+            "area",
+            "west"
           ]
         ],
         "asr": [
           [
-            "Looking for the address and phone of a spanish in the centre of town.",
+            "yes, can I get the address and phone to the locations?",
             1.0
           ]
         ],
-        "system_transcript": "",
-        "turn_idx": 0,
+        "system_transcript": "There are no matches for canapes.  Would you like me to continue checking the west side for Indian food?",
+        "turn_idx": 2,
         "belief_state": [
           {
             "slots": [
@@ -365,7 +837,16 @@
             "slots": [
               [
                 "food",
-                "spanish"
+                "indian"
+              ]
+            ],
+            "act": "inform"
+          },
+          {
+            "slots": [
+              [
+                "price range",
+                "moderate"
               ]
             ],
             "act": "inform"
@@ -374,104 +855,54 @@
             "slots": [
               [
                 "area",
-                "centre"
+                "west"
               ]
             ],
             "act": "inform"
           }
         ],
-        "transcript": "Looking for the address and phone of a spanish in the centre of town.",
-        "system_acts": []
-      },
-      {
-        "turn_label": [],
-        "asr": [
+        "transcript": "yes, can I get the address and phone to the locations?",
+        "system_acts": [
           [
-            "Is there anything else other than those two?",
-            1.0
+            "food",
+            "indian"
+          ],
+          [
+            "area",
+            "west"
           ]
-        ],
-        "system_transcript": "I have an inexpensive la Razam 01223 464550 at 4 - 6 Rose Crescent, and moderately priced la Tasca 01223 464630 at 14 -16 Bridge Street.",
-        "turn_idx": 1,
-        "belief_state": [
-          {
-            "slots": [
-              [
-                "food",
-                "spanish"
-              ]
-            ],
-            "act": "inform"
-          },
-          {
-            "slots": [
-              [
-                "area",
-                "centre"
-              ]
-            ],
-            "act": "inform"
-          }
-        ],
-        "transcript": "Is there anything else other than those two?",
-        "system_acts": []
+        ]
       },
       {
         "turn_label": [
           [
-            "area",
-            "south"
+            "price range",
+            "dontcare"
           ]
         ],
         "asr": [
           [
-            "What is in the south?",
+            "Seriously, I do not care.  Just pick a restaurant already. Whatever you pick, I will like.",
             1.0
           ]
         ],
-        "system_transcript": "Not in the centre.  Would you be willing to travel to another area?",
-        "turn_idx": 2,
-        "belief_state": [
-          {
-            "slots": [
-              [
-                "food",
-                "spanish"
-              ]
-            ],
-            "act": "inform"
-          },
-          {
-            "slots": [
-              [
-                "area",
-                "south"
-              ]
-            ],
-            "act": "inform"
-          }
-        ],
-        "transcript": "What is in the south?",
-        "system_acts": [
-          "area"
-        ]
-      },
-      {
-        "turn_label": [],
-        "asr": [
-          [
-            "No, thank you, goodbye",
-            1.0
-          ]
-        ],
-        "system_transcript": "Unfortunately, there are no Spanish restaurants in the south. Would you like me to check if there are any in the North or West parts of town? ",
+        "system_transcript": "Sure, but there are quite a few, Would like expensive or moderate?",
         "turn_idx": 3,
         "belief_state": [
           {
             "slots": [
               [
                 "food",
-                "spanish"
+                "indian"
+              ]
+            ],
+            "act": "inform"
+          },
+          {
+            "slots": [
+              [
+                "price range",
+                "dontcare"
               ]
             ],
             "act": "inform"
@@ -480,33 +911,42 @@
             "slots": [
               [
                 "area",
-                "south"
+                "west"
               ]
             ],
             "act": "inform"
           }
         ],
-        "transcript": "No, thank you, goodbye",
+        "transcript": "Seriously, I do not care.  Just pick a restaurant already. Whatever you pick, I will like.",
         "system_acts": [
-          "area"
+          "price range"
         ]
       },
       {
         "turn_label": [],
         "asr": [
           [
-            "Goodbye.",
+            "Thank you",
             1.0
           ]
         ],
-        "system_transcript": "Thank you! Goodbye!",
+        "system_transcript": "OK, let's go with the Cocum restaurant at 71 Castle Street City Centre. You can call them at 01223 366668.",
         "turn_idx": 4,
         "belief_state": [
           {
             "slots": [
               [
                 "food",
-                "spanish"
+                "indian"
+              ]
+            ],
+            "act": "inform"
+          },
+          {
+            "slots": [
+              [
+                "price range",
+                "dontcare"
               ]
             ],
             "act": "inform"
@@ -515,122 +955,13 @@
             "slots": [
               [
                 "area",
-                "south"
+                "west"
               ]
             ],
             "act": "inform"
           }
         ],
-        "transcript": "Goodbye.",
-        "system_acts": []
-      }
-    ]
-  },
-  {
-    "dialogue_idx": 603,
-    "dialogue": [
-      {
-        "turn_label": [
-          [
-            "food",
-            "korean"
-          ]
-        ],
-        "asr": [
-          [
-            "I'd like a restaurant with Korean food please. ",
-            1.0
-          ]
-        ],
-        "system_transcript": "",
-        "turn_idx": 0,
-        "belief_state": [
-          {
-            "slots": [
-              [
-                "food",
-                "korean"
-              ]
-            ],
-            "act": "inform"
-          }
-        ],
-        "transcript": "I'd like a restaurant with Korean food please. ",
-        "system_acts": []
-      },
-      {
-        "turn_label": [
-          [
-            "request",
-            "phone"
-          ],
-          [
-            "request",
-            "address"
-          ]
-        ],
-        "asr": [
-          [
-            "What is their address and phone number?",
-            1.0
-          ]
-        ],
-        "system_transcript": "Little Seoul is a Korean restaurant in the city centre, serving expensive food.",
-        "turn_idx": 1,
-        "belief_state": [
-          {
-            "slots": [
-              [
-                "slot",
-                "phone"
-              ]
-            ],
-            "act": "request"
-          },
-          {
-            "slots": [
-              [
-                "slot",
-                "address"
-              ]
-            ],
-            "act": "request"
-          },
-          {
-            "slots": [
-              [
-                "food",
-                "korean"
-              ]
-            ],
-            "act": "inform"
-          }
-        ],
-        "transcript": "What is their address and phone number?",
-        "system_acts": []
-      },
-      {
-        "turn_label": [],
-        "asr": [
-          [
-            "Thank you, goodbye",
-            1.0
-          ]
-        ],
-        "system_transcript": "Little Seoul is located at 108 Regent Street City Centre and their telephone number is 01223 308681.",
-        "turn_idx": 2,
-        "belief_state": [
-          {
-            "slots": [
-              [
-                "food",
-                "korean"
-              ]
-            ],
-            "act": "inform"
-          }
-        ],
-        "transcript": "Thank you, goodbye",
+        "transcript": "Thank you",
         "system_acts": []
       }
     ]
@@ -926,5 +1257,215 @@
         "system_acts": []
       }
     ]
-  }
+  },
+  {
+        "dialogue_idx": 863,
+        "dialogue": [
+            {
+                "turn_label": [
+                    [
+                        "food",
+                        "polish"
+                    ],
+                    [
+                        "price range",
+                        "cheap"
+                    ],
+                    [
+                        "request",
+                        "phone"
+                    ],
+                    [
+                        "request",
+                        "address"
+                    ]
+                ],
+                "asr": [
+                    [
+                        "I am looking for a cheaper resturaunt that serves polish food. If that in not available, I would take European. Can I get the address and phone number for those places. ",
+                        1.0
+                    ]
+                ],
+                "system_transcript": "",
+                "turn_idx": 0,
+                "belief_state": [
+                    {
+                        "slots": [
+                            [
+                                "slot",
+                                "phone"
+                            ]
+                        ],
+                        "act": "request"
+                    },
+                    {
+                        "slots": [
+                            [
+                                "slot",
+                                "address"
+                            ]
+                        ],
+                        "act": "request"
+                    },
+                    {
+                        "slots": [
+                            [
+                                "food",
+                                "polish"
+                            ]
+                        ],
+                        "act": "inform"
+                    },
+                    {
+                        "slots": [
+                            [
+                                "price range",
+                                "cheap"
+                            ]
+                        ],
+                        "act": "inform"
+                    }
+                ],
+                "transcript": "I am looking for a cheaper resturaunt that serves polish food. If that in not available, I would take European. Can I get the address and phone number for those places. ",
+                "system_acts": []
+            },
+            {
+                "turn_label": [],
+                "asr": [
+                    [
+                        "pardon?",
+                        1.0
+                    ]
+                ],
+                "system_transcript": "Is there anything else in a similar area.",
+                "turn_idx": 1,
+                "belief_state": [
+                    {
+                        "slots": [
+                            [
+                                "food",
+                                "polish"
+                            ]
+                        ],
+                        "act": "inform"
+                    },
+                    {
+                        "slots": [
+                            [
+                                "price range",
+                                "cheap"
+                            ]
+                        ],
+                        "act": "inform"
+                    }
+                ],
+                "transcript": "pardon?",
+                "system_acts": []
+            },
+            {
+                "turn_label": [
+                    [
+                        "food",
+                        "modern european"
+                    ],
+                    [
+                        "request",
+                        "phone"
+                    ],
+                    [
+                        "request",
+                        "address"
+                    ]
+                ],
+                "asr": [
+                    [
+                        "Yes, what is the phone number or address of The River bar Steakhouse and Grill?",
+                        1.0
+                    ]
+                ],
+                "system_transcript": "The River bar Steakhouse and Grill is a modern European restaurant that is cheap.  Would you like the phone number or address?",
+                "turn_idx": 2,
+                "belief_state": [
+                    {
+                        "slots": [
+                            [
+                                "slot",
+                                "phone"
+                            ]
+                        ],
+                        "act": "request"
+                    },
+                    {
+                        "slots": [
+                            [
+                                "slot",
+                                "address"
+                            ]
+                        ],
+                        "act": "request"
+                    },
+                    {
+                        "slots": [
+                            [
+                                "food",
+                                "modern european"
+                            ]
+                        ],
+                        "act": "inform"
+                    },
+                    {
+                        "slots": [
+                            [
+                                "price range",
+                                "cheap"
+                            ]
+                        ],
+                        "act": "inform"
+                    }
+                ],
+                "transcript": "Yes, what is the phone number or address of The River bar Steakhouse and Grill?",
+                "system_acts": [
+                    "phone",
+                    "address",
+                    [
+                        "food",
+                        "modern european"
+                    ]
+                ]
+            },
+            {
+                "turn_label": [],
+                "asr": [
+                    [
+                        "great. thank you.",
+                        1.0
+                    ]
+                ],
+                "system_transcript": "Phone is 01223 307030, and address is Quayside Off Bridge Street.",
+                "turn_idx": 3,
+                "belief_state": [
+                    {
+                        "slots": [
+                            [
+                                "food",
+                                "modern european"
+                            ]
+                        ],
+                        "act": "inform"
+                    },
+                    {
+                        "slots": [
+                            [
+                                "price range",
+                                "cheap"
+                            ]
+                        ],
+                        "act": "inform"
+                    }
+                ],
+                "transcript": "great. thank you.",
+                "system_acts": []
+            }
+        ]
+    }
 ]

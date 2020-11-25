@@ -3,7 +3,7 @@ import torch
 from magic.lib_cm import *
 
 
-def viz_turns(turns):
+def viz_turns(turns, show=True):
     t = Texttable(max_width=150)
     t.add_rows([["turn", "context"]])
     for idx, data in enumerate(turns):
@@ -14,7 +14,9 @@ def viz_turns(turns):
         text += "system_acts: {}\n".format(data.system_acts)
         text += "system_transcript: {}\n".format(data.system_transcript)
         t.add_row([str(idx), text])
-    print(t.draw())
+    if show:
+        print(t.draw())
+    return t.draw()
 
 
 def get_turn_pred_gold(gold_request, gold_inform, gold_recovered, pred_request, pred_inform, pred_recovered):

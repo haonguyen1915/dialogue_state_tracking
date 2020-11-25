@@ -6,6 +6,9 @@ from stanza.nlp.corenlp import CoreNLPClient
 from .visualize import *
 from texttable import Texttable
 from allennlp.data.tokenizers import Token
+from dst.constants import SEED
+
+np.random.seed(SEED)
 
 client = None
 
@@ -75,6 +78,16 @@ class Turn:
         self.num['system_acts'] = [
             vocab.word2index(['<sos>'] + [w.lower() for w in a] + ['<eos>'], train=True) for a in
             self.system_acts + [['<sentinel>']]]
+
+    def __str__(self):
+        t = Texttable(max_width=90)
+        t.add_rows([["turn", "context"]])
+        t.add_row(["transcript", self.transcript])
+        t.add_row(["turn_label", self.turn_label])
+        t.add_row(["system_acts", self.system_acts])
+        t.add_row(["system_transcript", self.system_transcript])
+        t.add_row(["belief_state", self.belief_state])
+        return t.draw()
 
 
 class Dialogue:
@@ -190,7 +203,7 @@ class Dataset:
                 # print(gold_request)
                 # print(gold_inform)
                 # print(gold_recovered)
-        # print(tee.draw())
+        print(tee.draw())
         return {'turn_inform': np.mean(inform), 'turn_request': np.mean(request),
                 'joint_goal': np.mean(joint_goal)}
 
@@ -203,6 +216,10 @@ class Dataset:
                 i += 1
         with open(to_file, 'wt') as f:
             json.dump(data, f)
+
+    def __str__(self):
+        turns = list(self.iter_turns())
+        return viz_turns(turns, False)
 
 
 class Ontology:
